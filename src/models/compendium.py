@@ -15,6 +15,7 @@ class CompendiumSchema(BaseModel):
             "example": {
                 "name": "Jack Frost",
                 "level": "7",
+                "description": "A frosty one",
                 "lives_in": ["Megami Tensei II", "Shin Megami Tensei", "Shin Megami Tensei III: Nocturne", "Shin Megami Tensei IMAGINE"],
                 "image": "https://i.imgur.com/fAMd0W8.png",
             }
@@ -33,6 +34,7 @@ class UpdateCompendiumModel(BaseModel):
             "example": {
                 "name": "Berith",
                 "level": "9",
+                "description": "A red one",
                 "lives_in": ["Shin Megami Tensei", "Shin Megami Tensei III: Nocturne", "Shin Megami Tensei IMAGINE", "Shin Megami Tensei V"],
                 "image": "https://i.imgur.com/fJ6gAJI.jpg",
             }
