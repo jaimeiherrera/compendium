@@ -1,0 +1,16 @@
+name: "Docker Test"
+on:
+  pull_request:
+    types:
+      - opened
+    branches:
+      - "main"
+jobs:
+  Docker_Test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Docker Build
+        run: docker build -t compendium .
+      - name: Docker Run
+        run: docker run --name compendium_container -d compendium
