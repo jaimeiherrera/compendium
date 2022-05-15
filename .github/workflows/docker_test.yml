@@ -6,7 +6,7 @@ on:
     branches:
       - "main"
 jobs:
-  Docker_Test:
+  Docker_Build_and_Run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
