@@ -9,3 +9,6 @@ Compendium Test API
 
 ## Docker Run
 `docker run -p 9001:9001 --name compendium_container -d compendium`
+
+### Made with
+[FastAPI](https://github.com/tiangolo/fastapi)
