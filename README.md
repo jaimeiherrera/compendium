@@ -5,4 +5,4 @@
 `docker build -t compendium .`
 
 ## Run Docker
-`docker run -it -p 8000:8000 --rm --name compendium_container compendium`
+`docker run -p 9001:9001 --name compendium_container -d compendium`
