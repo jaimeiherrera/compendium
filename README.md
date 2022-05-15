@@ -1,8 +1,10 @@
+# Compendium
+
 ## Runserver
 `python3 main.py`
 
-## Build Docker
+## Docker Build
 `docker build -t compendium .`
 
-## Run Docker
+## Docker Run
 `docker run -p 9001:9001 --name compendium_container -d compendium`
