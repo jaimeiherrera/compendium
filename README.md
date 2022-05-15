@@ -1,4 +1,5 @@
 # Compendium
+Compendium Test API
 
 ## Runserver
 `python3 main.py`
