@@ -9,6 +9,7 @@ models.Base.metadata.create_all(bind=engine)
 app = FastAPI(title="Demon API", description="Demon API", version="0.3")
 
 
+# DB instance
 def get_db():
     db = SessionLocal()
     try:
