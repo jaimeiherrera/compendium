@@ -6,7 +6,7 @@ from src.database import SessionLocal, engine
 
 models.Base.metadata.create_all(bind=engine)
 
-app = FastAPI()
+app = FastAPI(title="Demon API", description="Demon API", version="0.3")
 
 
 def get_db():
@@ -50,3 +50,11 @@ def update_demon(demon_id: int, demon: schemas.DemonCreate, db: Session = Depend
     if db_demon is None:
         raise HTTPException(status_code=404, detail="Demon not found")
     return crud.update_demon(db=db, demon=demon, demon_id=demon_id)
+
+
+@app.delete("/demons/{demon_id}", tags=["Demons"])
+def delete_demon(demon_id: int, db: Session = Depends(get_db)):
+    db_demon = crud.get_demon(db, demon_id=demon_id)
+    if db_demon is None:
+        raise HTTPException(status_code=404, detail="Demon not found")
+    return crud.delete_demon(db=db, demon_id=demon_id)
