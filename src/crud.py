@@ -22,3 +22,15 @@ def create_demon(db: Session, demon: schemas.DemonCreate):
     db.commit()
     db.refresh(db_demon)
     return db_demon
+
+
+def update_demon(db: Session, demon: schemas.DemonCreate, demon_id: int):
+    db_demon = get_demon(db, demon_id)
+    if db_demon is None:
+        return None
+    db_demon.name = demon.name
+    db_demon.description = demon.description
+    db_demon.url_image = demon.url_image
+    db.commit()
+    db.refresh(db_demon)
+    return db_demon
