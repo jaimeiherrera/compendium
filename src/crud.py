@@ -34,3 +34,12 @@ def update_demon(db: Session, demon: schemas.DemonCreate, demon_id: int):
     db.commit()
     db.refresh(db_demon)
     return db_demon
+
+
+def delete_demon(db: Session, demon_id: int):
+    db_demon = get_demon(db, demon_id)
+    if db_demon is None:
+        return False
+    db.delete(db_demon)
+    db.commit()
+    return True
