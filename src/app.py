@@ -18,7 +18,7 @@ def get_db():
         db.close()
 
 
-@app.get("/", tags=["Root"])
+@app.get("/")
 async def read_root():
     return {"message": "Welcome to the Compendium API!"}
 
